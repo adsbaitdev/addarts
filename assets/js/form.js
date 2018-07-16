@@ -129,7 +129,9 @@ var lpform = {
 			};
 			xhttp.open(method, url, true);
 			xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-			xhttp.send(method==="POST" ? data : "");
+			var sendData = method==="POST" ? data : "";
+			console.log(sendData);
+			xhttp.send(sendData);
 		},
 		getQuery:function(transform){
 			var data = lpform.datas.formdata,q="";
