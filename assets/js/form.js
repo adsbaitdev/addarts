@@ -110,9 +110,9 @@ var lpform = {
 			if(valid) this.submit(form);
 		},
 		submit:function(form){
-			var method = lpform.datas.method === "GET";
-				query = this.getQuery(method),res;
-			res = this.ajax(form,query);
+			var method = lpform.datas.method === "GET",
+				query = this.getQuery(method);
+			var res = this.ajax(form,query);
 		},
 		ajax:function(form,data){
 			var method = lpform.datas.method,
