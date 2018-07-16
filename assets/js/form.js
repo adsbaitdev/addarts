@@ -110,9 +110,8 @@ var lpform = {
 			if(valid) this.submit(form);
 		},
 		submit:function(form){
-			var method = lpform.datas.method === "GET",
-				query = this.getQuery(method);
-			var res = this.ajax(form,query);
+			var query = this.getQuery(true);
+			this.ajax(form,query);
 		},
 		ajax:function(form,data){
 			console.log(data);
@@ -130,7 +129,6 @@ var lpform = {
 			xhttp.open(method, url, true);
 			xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 			var sendData = method==="POST" ? data : "";
-			console.log(sendData);
 			xhttp.send(sendData);
 		},
 		getQuery:function(transform){
