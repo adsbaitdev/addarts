@@ -1,0 +1,98 @@
+.desktop,.tablet{ display: none; }
+.container{width: 94%; margin: 0 auto;}
+.body{font-family: Montserrat, Arial, sans-serif; font-size: 14px; margin: 0;}
+a{text-decoration: none; outline: 0;}
+input,select,button{outline: 0; width: 100%;}
+ul{list-style-type: none; margin:0; padding: 0;}
+
+.logo img{width: 175px;}
+.bghead { padding-bottom: 30px; padding-top: 30px; }
+.pagehead{ position: relative; background-size: cover; background: url(../images/add/mobile/bghead.jpg) no-repeat left top; height: 170px; margin-bottom: 56px; }
+p,h1,h2,h3,h4{ margin:0; }
+h1{ font-size: 2.2em; padding: 15px 29px; bottom: -56px; left: 20px; background-color: #17e592; color: #ffffff; position: absolute; text-transform: uppercase; margin: 0; right:20px; text-align:center; }
+.adminLogin{ margin: 150px 0; }
+.formcontent{ width: 50%; margin: 0 auto; }
+.inpulab{ position: relative; margin-bottom: 29px; }
+input{ padding-left: 12px; border: 3px solid #8d8d8d; background-color: #ffffff; color: #1a1a1a; height: 35px; font-size: 1.071em; width: calc(100% - 18px); }
+input.active{ border-color: #17e592; }
+.dynlabel { top: 10px; font-size: 1.143em; position: absolute; left: 15px; transition: 1s ease; animation: labeldown .5s; animation-fill-mode: forwards; }
+.dynlabel.active{ animation: labelup .5s; animation-fill-mode: forwards; }
+.inputs .formerror { position: relative; font-size: 1em; color: red; font-weight: 600; }
+.button{ text-transform: uppercase; text-align: center; cursor: pointer; font-size: 1.214em; border: 0; padding: 12px 0; }
+.black { background-color: #191919; }
+.black a{ color: #FFFFFF; }
+
+footer{background-color: #000000; }
+footer .headline{padding-top: 27px; padding-bottom: 20px; text-align: center; }
+footer .logo img {width: 162px;}
+
+.fadeblackin, .fadeblackin a, .fadeblackout, .fadeblackout a{ animation-duration: .2s; animation-fill-mode: forwards; }
+.fadeblackin { animation-name: fadeblackin; }
+.fadeblackout { animation-name: fadeblackout; }
+.fadeblackin a { animation-name: fadeblackincolor; }
+.fadeblackout a { animation-name: fadeblackoutcolor; }
+
+@keyframes labelup{
+	100%{ font-size: .928em; top:-23px; left:0; }
+}
+@keyframes labeldown{
+	0%{ font-size: .928em; top:-23px; left:0; }
+	100%{ font-size: 1.071em; top:10px; left:15px; }
+}
+@keyframes fadeblackout {
+    0% {background-color: #17e592; }
+    100% {background-color: #191919; }
+}
+@keyframes fadeblackoutcolor {
+    0% { color: #191919;}
+    100% { color: #ffffff; }
+}
+@keyframes fadeblackin {
+    0% { background-color: #191919; }
+    100% { background-color: #17e592; }
+}
+@keyframes fadeblackincolor {
+    0% { color: #ffffff; }
+    100% { color: #191919; }
+}
+
+@media all and (min-width: 360px){}
+@media all and (min-width: 375px){}
+@media all and (min-width: 411px){
+    h1{ right:auto; text-align:left; }    
+}
+
+@media all and (min-width: 640px){
+	.logo img { width: 246px; }
+    .pagehead{ height: 400px; }
+    h1{ font-size: 3em; }
+    footer .headline{padding-top: 20px; }
+}
+
+@media all and (min-width: 768px){
+	.mobile{ display: none; }
+	.tablet{ display: block; }
+	.container{ width: 97%; }
+	.pagehead{ background: url(../images/add/tablet/bghead.jpg) no-repeat left top; margin-bottom:48px; }
+	h1{ padding: 12px 29px; bottom: -48px; left: 31px; }
+	footer .headline{ padding-top: 24px; }
+}
+@media all and (min-width: 1024px){
+	.nowrap{ white-space: nowrap; }
+	.container{ width: 90%; }
+	.logo img{width: 200px;}
+	.pagehead{ background: url(../images/add/bghead.jpg) no-repeat left top; height: 420px; margin: 0 auto; margin-bottom: 71px; }
+	h1{ bottom: -71px; font-size: 4.5em; left: 75px; padding: 22px 64px; }
+	footer .container { width: 90.5%; }
+	footer .headline{ padding-top: 17px; padding-bottom: 14px; }
+	footer .logo img{ width: 159px; }
+}
+@media all and (min-width: 1560px){
+	.tablet{ display: none; }
+	.desktop{ display: block; }
+	.container{ width: 90.5%; max-width: 1560px; }
+	.logo img{width: 295px;}
+	.pagehead{ background: url(../images/add/bghead.png) no-repeat left top; max-width:100%; background-size:cover !important; }
+	h1{ font-size: 5.3em; }
+	footer .headline{ width: 100%; margin: 0 auto; }
+}

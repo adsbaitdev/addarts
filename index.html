@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="newarts">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AdsBait | Blog</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="assets/css/savearts.css">
+</head>
+<body class="body">
+<div id="allsitecontent">
+	<header class="bghead">
+		<div class="container">
+			<div class="headline">
+				<div class="logo"><img src="assets/images/logoblack.png" alt="AdsBait"></div>
+			</div>
+		</div>
+	</header>
+	<section class="pagehead"><h1>Add Article</h1></section>
+	<section class="addArtsContainer" ng-controller="AddArticleController as aa">
+		<section class="adminLogin" ng-if="!aa.isAdmin">
+			<div class="container">
+				<div class="formcontent">
+					<form class="formadmin" action="admin.php" method="post" ng-init="aa.formActive()">
+						<div class="inputs">
+							<div class="inpulab">
+								<input type="text" name="user" placeholder="">
+								<label class="dynlabel">Username:</label>
+							</div>
+							<div class="inpulab">
+								<input type="password" name="password" placeholder="">
+								<label class="dynlabel">Password:</label>
+							</div>
+						</div>
+						<div class="buttons"><button class="button black"><a href="index.html" title="Sign In">Sign In</a></button></div>
+						<div class="formres"></div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<section class="addArticleContent" ng-if="aa.isAdmin">
+			<div class="container">
+
+			</div>	
+		</section>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="headline">
+				<div class="logo"><img src="assets/images/logowhite.png" alt="AdsBait"></div>
+			</div>
+		</div>
+	</footer>
+</div>
+<div id="hiddencontent" class="hiddens">
+
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.0/angular.js"></script>
+<script type="text/javascript" src="assets/js/AddArticleService.js"></script>
+<script type="text/javascript" src="assets/js/AddArticleController.js"></script>
+<script type="text/javascript" src="assets/js/form.js"></script>
+</body>
+</html>
