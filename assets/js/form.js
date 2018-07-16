@@ -1,6 +1,7 @@
 var lpform = {
 	datas:{
 		url:"query/sendform.php",
+		method:"POST",
 		form: document.getElementsByTagName('form'),
 		dynlabels: document.getElementsByClassName('inpulab'),
 		formres: document.getElementsByClassName('formres'),
@@ -109,11 +110,14 @@ var lpform = {
 			if(valid) this.submit(form);
 		},
 		submit:function(form){
-			var query = this.getQuery(),res;
-			if(query.length) res  = this.ajax(form,query);
+			var method = lpform.datas.method === "GET";
+				query = this.getQuery(method),res;
+			res = this.ajax(form,query);
 		},
 		ajax:function(form,data){
-			console.log(data);
+			var method = lpform.datas.method,
+				url = lpform.datas.url;
+			if(method==="GET") url += "?"+data;
 			var xhttp;
 			xhttp=new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
@@ -122,16 +126,18 @@ var lpform = {
 			      return this.responseText;
 			    }
 			};
-			xhttp.open("POST", lpform.datas.url, true);
+			xhttp.open(method, url, true);
 			xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-			xhttp.send(data);
+			xhttp.send(method==="POST" ? data : "");
 		},
-		getQuery:function(){
-		      var data = lpform.datas.formdata,q="";
-		      for(var i in data){
-		          q += i+"="+data[i]+"&";
-		      }
-		      return q.slice(0,-1);
+		getQuery:function(transform){
+			var data = lpform.datas.formdata,q="";
+			if(transform){
+				for(var i in data){
+					q += i+"="+data[i]+"&";
+				}
+				return q.slice(0,-1);
+			}else return data;
 		},
 		valid:function(el){
 			var valid = true;
