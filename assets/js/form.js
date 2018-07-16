@@ -115,6 +115,7 @@ var lpform = {
 			var res = this.ajax(form,query);
 		},
 		ajax:function(form,data){
+			console.log(data);
 			var method = lpform.datas.method,
 				url = lpform.datas.url;
 			if(method==="GET") url += "?"+data;
