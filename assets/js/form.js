@@ -113,6 +113,7 @@ var lpform = {
 			if(query.length) res  = this.ajax(form,query);
 		},
 		ajax:function(form,data){
+			console.log(data);
 			var xhttp;
 			xhttp=new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
