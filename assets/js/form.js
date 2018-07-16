@@ -120,6 +120,12 @@ var lpform = {
 			if(method==="GET") url += "?"+data;
 			var xhttp;
 			xhttp=new XMLHttpRequest();
+			if ("withCredentials" in xhttp) {
+				xhttp.withCredentials = true;
+			}
+			if (typeof XDomainRequest != "undefined") {
+				xhttp = new XDomainRequest();
+			}
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 			      lpform.form.showResult(form,this.responseText);
